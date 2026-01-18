@@ -5,6 +5,8 @@ import { getMovies } from './movie_data'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {getMovies()}
+    <div className="movie-container">
+      {getMovies()}
+    </div>
   </StrictMode>,
 )
