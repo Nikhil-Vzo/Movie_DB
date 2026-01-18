@@ -1,10 +1,14 @@
-function Moviecard({title,release_date})
+import './moviecard.css'
+
+function Moviecard({image,title,release_date})
 {
+    
     return(
         <>
         <div className="poster">
             <div className="img">
-                    <img src={""} ></img>
+                    <img src={image} ></img>
+                    <span>❤️</span>
             </div>
             <div className="overlay">
                 <p>{title}</p>

@@ -1,0 +1,29 @@
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.poster{
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.poster img
+{
+    width: 95%;
+    height: 100%;
+    object-fit: cover;
+  margin-top: 1rem;
+}
+
+body
+{
+    display: flex;
+}

@@ -1,14 +1,14 @@
 import Moviecard from "./components/moviecard";
 
 const movies = [
-    {id:1, title:"inception", release_date:"2028"},
-    {id:2, title:"lucky the racer", release_date:"2090"}
+    {id:1, img:"https://picsum.photos/300/200", title:"inception", release_date:"2028"},
+    {id:2, img:"https://picsum.photos/300/200", title:"lucky the racer", release_date:"2090"}
 
 ];
 
 export function getMovies()
 {
     return (movies.map((movie => {
-        return <Moviecard key={movie.id} title={movie.title} release_date={movie.release_date} />
+        return <Moviecard key={movie.id} image={movie.img} title={movie.title} release_date={movie.release_date} />
     })))
 }
