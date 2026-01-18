@@ -5,24 +5,42 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #141414;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrollbar from animation */
+    background: linear-gradient(315deg, #0d0d2b, #1a1a52, #3c1a52, #5d1a52);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
     color: white;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .movie-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; /* Center the cards within the container */
     gap: 2rem;
     padding: 2rem;
-    justify-items: center;
 }
 
 .poster {
     width: 300px;
-    background-color: #222;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -36,7 +54,7 @@ body {
 
 .img {
     width: 100%;
-    height: 400px; /* Fixed height for the image container */
+    height: 400px;
     position: relative;
     cursor: pointer;
 }
@@ -63,11 +81,12 @@ body {
 }
 
 .poster:hover .heart {
-    color: red;
+    color: #ff4757; /* A brighter red */
 }
 
 .poster-details {
     padding: 1rem;
+    text-align: center; /* Center the text */
 }
 
 .poster-details p {
@@ -84,3 +103,5 @@ body {
     font-size: 0.9rem;
     color: #ccc;
 }
+
+

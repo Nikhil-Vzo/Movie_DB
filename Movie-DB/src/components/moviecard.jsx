@@ -6,6 +6,11 @@ function Moviecard({image,title,release_date})
 {
     
     return(
+        <div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+  
         <div className="poster">
             <div className="img">
                 <img src={image} ></img>
@@ -15,6 +20,7 @@ function Moviecard({image,title,release_date})
                 <p className="title">{title}</p>
                 <p className="release-date">{release_date}</p>
             </div>
+        </div>
         </div>
     )
 }
