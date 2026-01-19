@@ -6,9 +6,17 @@ const movies = [
 
 ];
 
-export function getMovies()
-{
-    return (movies.map((movie => {
-        return <Moviecard key={movie.id} image={movie.img} title={movie.title} release_date={movie.release_date} />
-    })))
+export function getMovies(search) {
+  return movies
+    .filter(movie =>
+      movie.title.toLowerCase().startsWith(search.toLowerCase())
+    )
+    .map(movie => (
+      <Moviecard
+        key={movie.id}
+        image={movie.img}
+        title={movie.title}
+        release_date={movie.release_date}
+      />
+    ));
 }

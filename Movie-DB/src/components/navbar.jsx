@@ -1,30 +1,21 @@
 import './nav.css'
-import { useState } from "react"  
 
-
-function Navbar()
+function Navbar({ searchTerm, setSearchTerm })
 {
-    const [search, setSearch] = useState("");
-
-    const handleSearch = (e) => {
-        e.preventDefault();
-        
-    };
-
     return(
         <>
         <div className="nav">
             <div className="search-bar">
                 <form 
-                onSubmit={handleSearch} 
                 className="search-form"
+                onSubmit={(e) => e.preventDefault()}
                 >
                 <input 
                     className="sb" 
                     type="text" 
                     placeholder="Search" 
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <button className="sb-btn" type='submit'> Search  </button>
                 </form>
