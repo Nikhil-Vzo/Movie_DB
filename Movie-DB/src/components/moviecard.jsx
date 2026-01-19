@@ -1,7 +1,5 @@
 import './moviecard.css'
 
-import './moviecard.css'
-
 function Moviecard({image,title,release_date})
 {
     
@@ -26,4 +24,3 @@ function Moviecard({image,title,release_date})
 }
 
 export default Moviecard
-
