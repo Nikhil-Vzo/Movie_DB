@@ -5,7 +5,10 @@ function Navbar()
     return(
         <>
         <div className="nav">
-            <div className="search-bar"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div className="search-bar">
+                <input className="sb" type="text" placeholder="Search" />
+                <button className="sb-btn" type='submit'> Search  </button>
+            </div>
             <div className="nav-links">
                 <ul>
                     <li><a href="#">Home</a></li>
