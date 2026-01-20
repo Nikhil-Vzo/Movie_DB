@@ -1,8 +1,11 @@
 import Moviecard from "./components/moviecard";
 
+
+const movies_poster = "https://picsum.photos/300/200";
+
 const movies = [
-    {id:1, img:"https://picsum.photos/300/200", title:"inception", release_date:"2028"},
-    {id:2, img:"https://picsum.photos/300/200", title:"lucky the racer", release_date:"2090"}
+    {id:1, img: movies_poster, title:"inception", release_date:"2028"},
+    {id:2, img: movies_poster, title:"lucky the racer", release_date:"2090"}
 
 ];
 
