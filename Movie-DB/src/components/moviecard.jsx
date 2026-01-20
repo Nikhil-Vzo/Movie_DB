@@ -1,26 +1,35 @@
 import './moviecard.css'
 
-function Moviecard({image,title,release_date})
-{
-    
-    return(
-        <div>
-     <div class="wave"></div>
-     <div class="wave"></div>
-     <div class="wave"></div>
-  
-        <div className="poster">
-            <div className="img">
-                <img src={image} ></img>
-                <span className="heart">❤️</span>
-            </div>
-            <div className="poster-details">
-                <p className="title">{title}</p>
-                <p className="release-date">{release_date}</p>
-            </div>
+function Moviecard({ movie, image, title, release_date, isFavorite, addToFavorites, removeFromFavorites }) {
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      removeFromFavorites(movie);
+    } else {
+      addToFavorites(movie);
+    }
+  };
+
+  return (
+    <div>
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className="wave"></div>
+
+      <div className="poster">
+        <div className="img">
+          <img src={image} ></img>
+          <button className="heart-btn" onClick={handleFavoriteClick}>
+            {isFavorite ? '❤️' : '🤍'}
+          </button>
         </div>
+        <div className="poster-details">
+          <p className="title">{title}</p>
+          <p className="release-date">{release_date}</p>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Moviecard

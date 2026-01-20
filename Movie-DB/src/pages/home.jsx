@@ -4,7 +4,7 @@ import { searchMovies, getPopularMovies } from "../../services/api";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-export default function Home({ searchTerm }) {
+export default function Home({ searchTerm, favorites, addToFavorites, removeFromFavorites }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,21 @@ export default function Home({ searchTerm }) {
 
   return (
     <div className="movie-container">
-      {movies.map((movie) => (
-        <Moviecard
-          key={movie.id}
-          image={movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : "https://picsum.photos/300/200"}
-          title={movie.title}
-          release_date={movie.release_date}
-        />
-      ))}
+      {movies.map((movie) => {
+        const isFavorite = favorites.some((fav) => fav.id === movie.id);
+        return (
+          <Moviecard
+            key={movie.id}
+            movie={movie}
+            image={movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}` : "https://picsum.photos/300/200"}
+            title={movie.title}
+            release_date={movie.release_date}
+            isFavorite={isFavorite}
+            addToFavorites={addToFavorites}
+            removeFromFavorites={removeFromFavorites}
+          />
+        );
+      })}
     </div>
   );
 }
