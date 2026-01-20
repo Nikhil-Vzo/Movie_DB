@@ -1,4 +1,4 @@
-import Moviecard from "./components/moviecard";
+import Moviecard from "../components/moviecard";
 
 
 const movies_poster = "https://picsum.photos/300/200";

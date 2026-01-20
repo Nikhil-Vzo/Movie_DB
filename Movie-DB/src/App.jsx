@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Navbar from './components/navbar'
-import { getMovies } from './movie_data'
+import { getMovies } from '../src/pages/home'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
