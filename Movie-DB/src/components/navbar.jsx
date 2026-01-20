@@ -1,4 +1,5 @@
 import './nav.css'
+import { Link } from 'react-router-dom';
 
 function Navbar({ searchTerm, setSearchTerm })
 {
@@ -23,8 +24,8 @@ function Navbar({ searchTerm, setSearchTerm })
          
             <div className="nav-links">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Favorite</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/favourites">Favorite</Link></li>
                     <li><a href="#">Watchlist</a></li>
                 </ul>
             </div>

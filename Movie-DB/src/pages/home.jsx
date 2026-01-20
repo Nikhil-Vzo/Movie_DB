@@ -9,17 +9,25 @@ const movies = [
 
 ];
 
-export function getMovies(search) {
-  return movies
-    .filter(movie =>
-      movie.title.toLowerCase().startsWith(search.toLowerCase())
-    )
-    .map(movie => (
-      <Moviecard
-        key={movie.id}
-        image={movie.img}
-        title={movie.title}
-        release_date={movie.release_date}
-      />
-    ));
+export default function Home({ searchTerm }) {
+  const getMovies = (search) => {
+    return movies
+      .filter(movie =>
+        movie.title.toLowerCase().startsWith(search.toLowerCase())
+      )
+      .map(movie => (
+        <Moviecard
+          key={movie.id}
+          image={movie.img}
+          title={movie.title}
+          release_date={movie.release_date}
+        />
+      ));
+  }
+
+  return (
+    <div className="movie-container">
+      {getMovies(searchTerm)}
+    </div>
+  )
 }

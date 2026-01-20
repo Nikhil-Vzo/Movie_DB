@@ -1,4 +1,4 @@
-function fav()
+export default function Fav()
 {
     return(
         <>
