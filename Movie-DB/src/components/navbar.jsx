@@ -26,7 +26,6 @@ function Navbar({ searchTerm, setSearchTerm })
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/favourites">Favorite</Link></li>
-                    <li><a href="#">Watchlist</a></li>
                 </ul>
             </div>
         </div>
