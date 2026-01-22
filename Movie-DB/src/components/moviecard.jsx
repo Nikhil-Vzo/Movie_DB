@@ -20,7 +20,7 @@ function Moviecard({ movie, image, title, release_date, isFavorite, addToFavorit
         <div className="img">
           <img src={image} ></img>
           <button className="heart-btn" onClick={handleFavoriteClick}>
-            {isFavorite ? '❤️' : '🤍'}
+            {isFavorite ? '❤️Added' : '🤍'}
           </button>
         </div>
         <div className="poster-details">
